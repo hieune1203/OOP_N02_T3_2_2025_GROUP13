@@ -1,3 +1,5 @@
+package database;
+
 import model.GiaoDich;
 
 import java.util.ArrayList;
