@@ -2,16 +2,16 @@ package com.example.servingwebcontent.component;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
-import com.example.servingwebcontent.controller.GiaoDichController;
 import com.example.servingwebcontent.model.GiaoDich;
+import com.example.servingwebcontent.database.DanhSachGiaoDich;
 
 public class GiaoDien {
-    private GiaoDichController controller;
+    private DanhSachGiaoDich danhSachGiaoDich;
     private Scanner scanner;
 
     public GiaoDien() {
         scanner = new Scanner(System.in);
-        controller = new GiaoDichController();
+        danhSachGiaoDich = new DanhSachGiaoDich();
     }
 
     public void chay() {
@@ -56,26 +56,28 @@ public class GiaoDien {
         double thanhTien = Double.parseDouble(scanner.nextLine());
 
         Date ngayGD = new Date();
-        controller.themGiaoDich(maKH, maHH, soLuong, thanhTien, ngayGD);
+        GiaoDich gd = new GiaoDich(maKH, maHH, soLuong, thanhTien, ngayGD);
+        danhSachGiaoDich.them(gd);
         System.out.println("✅ Giao dịch đã được thêm.");
     }
 
     private void hienThiDanhSach() {
-        List<GiaoDich> danhSach = controller.layTatCaGiaoDich();
+        List<GiaoDich> danhSach = danhSachGiaoDich.layTatCa();
         if (danhSach.isEmpty()) {
-            System.out.println("⚠️ Không có giao dịch nào.");
+            System.out.println("Không có giao dịch nào.");
         } else {
-            for (int i = 0; i < danhSach.size(); i++) {
-            GiaoDich gd = danhSach.get(i);
-            System.out.printf("[%d] KH: %s | HH: %s | SL: %d | Tiền: %.2f | Ngày: %s\n",
-            i + 1,
-                gd.getMaKhachHang(),
-                gd.getMaHangHoa(),
-                gd.getSoLuong(),
-                gd.getThanhTien(),
-                gd.getNgayGiaoDich().toString()
-            );
+            for (GiaoDich gd : danhSach) {
+                System.out.println("Mã KH: " + gd.getMaKH());
+                System.out.println("Mã HH: " + gd.getMaHH());
+                System.out.println("Số lượng: " + gd.getSoLuong());
+                System.out.println("Thành tiền: " + gd.getThanhTien());
+                System.out.println("Ngày GD: " + gd.getNgayGD());
+                System.out.println("----------------------");
             }
         }
+    }
+
+    public String layNoiDung() {
+        return "Đây là nội dung giao diện từ GiaoDien.java!";
     }
 }

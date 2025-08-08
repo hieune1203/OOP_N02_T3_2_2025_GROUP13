@@ -1,49 +1,36 @@
 package com.example.servingwebcontent.model;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class GiaoDich {
-    private String maKhachHang;
-    private String maHangHoa;
+    private String maKH;
+    private String maHH;
     private int soLuong;
     private double thanhTien;
-    private Date ngayGiaoDich;
+    private Date ngayGD;
+
+    public GiaoDich() {} // Constructor mặc định cho Spring
 
     public GiaoDich(String maKH, String maHH, int soLuong, double thanhTien, Date ngayGD) {
-        this.maKhachHang = maKH;
-        this.maHangHoa = maHH;
+        this.maKH = maKH;
+        this.maHH = maHH;
         this.soLuong = soLuong;
         this.thanhTien = thanhTien;
-        this.ngayGiaoDich = ngayGD;
+        this.ngayGD = ngayGD;
     }
 
-    public String getMaKhachHang() {
-        return maKhachHang;
-    }
+    public String getMaKH() { return maKH; }
+    public void setMaKH(String maKH) { this.maKH = maKH; }
 
-    public String getMaHangHoa() {
-        return maHangHoa;
-    }
+    public String getMaHH() { return maHH; }
+    public void setMaHH(String maHH) { this.maHH = maHH; }
 
-    public int getSoLuong() {
-        return soLuong;
-    }
+    public int getSoLuong() { return soLuong; }
+    public void setSoLuong(int soLuong) { this.soLuong = soLuong; }
 
-    public double getThanhTien() {
-        return thanhTien;
-    }
+    public double getThanhTien() { return thanhTien; }
+    public void setThanhTien(double thanhTien) { this.thanhTien = thanhTien; }
 
-    public Date getNgayGiaoDich() {
-        return ngayGiaoDich;
-    }
-
-    public String toString() {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        return "Mã KH: " + maKhachHang +
-               " | Mã HH: " + maHangHoa +
-               " | Số lượng: " + soLuong +
-               " | Thành tiền: " + thanhTien +
-               " | Ngày GD: " + sdf.format(ngayGiaoDich);
-    }
+    public Date getNgayGD() { return ngayGD; }
+    public void setNgayGD(Date ngayGD) { this.ngayGD = ngayGD; }
 }
