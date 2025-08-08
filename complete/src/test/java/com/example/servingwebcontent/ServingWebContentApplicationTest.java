@@ -16,6 +16,8 @@
 
 package com.example.servingwebcontent;
 
+import com.example.servingwebcontent.controller.GreetingController;
+
 import static org.hamcrest.Matchers.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
