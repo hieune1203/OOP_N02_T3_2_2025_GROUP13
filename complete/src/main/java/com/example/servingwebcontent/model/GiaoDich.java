@@ -9,7 +9,7 @@ public class GiaoDich {
     private double thanhTien;
     private Date ngayGD;
 
-    public GiaoDich() {} // Constructor mặc định cho Spring
+    public GiaoDich() {}
 
     public GiaoDich(String maKH, String maHH, int soLuong, double thanhTien, Date ngayGD) {
         this.maKH = maKH;
