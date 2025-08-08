@@ -1,4 +1,4 @@
-package model;
+package com.example.servingwebcontent.model;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -10,12 +10,12 @@ public class GiaoDich {
     private double thanhTien;
     private Date ngayGiaoDich;
 
-    public GiaoDich(String maKhachHang, String maHangHoa, int soLuong, double thanhTien, Date ngayGiaoDich) {
-        this.maKhachHang = maKhachHang;
-        this.maHangHoa = maHangHoa;
+    public GiaoDich(String maKH, String maHH, int soLuong, double thanhTien, Date ngayGD) {
+        this.maKhachHang = maKH;
+        this.maHangHoa = maHH;
         this.soLuong = soLuong;
         this.thanhTien = thanhTien;
-        this.ngayGiaoDich = ngayGiaoDich;
+        this.ngayGiaoDich = ngayGD;
     }
 
     public String getMaKhachHang() {

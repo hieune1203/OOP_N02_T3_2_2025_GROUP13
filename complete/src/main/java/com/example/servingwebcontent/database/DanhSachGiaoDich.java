@@ -1,6 +1,6 @@
-package database;
+package com.example.servingwebcontent.database;
 
-import model.GiaoDich;
+import com.example.servingwebcontent.model.GiaoDich;
 
 import java.util.ArrayList;
 import java.util.List;
